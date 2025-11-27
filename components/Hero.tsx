@@ -198,7 +198,7 @@ export default function Hero() {
             <Typography
               variant="body1"
               sx={{
-                fontSize: { xs: '1.1rem', sm: '1.1rem' },
+                fontSize: { xs: '0.8rem', sm: '1.1rem' },
                 color: 'text.primary',
                 fontFamily: 'RockThorn, Inter, sans-serif',
                 fontWeight: 400,

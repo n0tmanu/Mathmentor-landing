@@ -57,7 +57,9 @@ export default function Testimonials() {
   return (
     <Container
       id="testimonials"
+      disableGutters
       sx={{
+        width: '100%',
         position: 'relative',
         '&::before': {
           content: '""',
