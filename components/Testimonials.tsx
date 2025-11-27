@@ -38,7 +38,7 @@ const userTestimonials = [
     },
   {
     avatar: <Avatar alt="Travis Howard" src="/static/images/avatar/5.jpg" />,
-    name: 'John Smith',
+    name: 'Michael Richardson',
     occupation: 'Student',
     testimonial:
       "I love that I can join group classes, book private sessions, and access tons of resources without switching apps. Studying feels more organized, less stressful, and I’m actually enjoying learning maths again.",
