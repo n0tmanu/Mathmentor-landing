@@ -144,13 +144,13 @@ export function MobileLayout({
         }}>
           <Typography
             variant="body1"
-            sx={{
-              color: 'hsl(60, 100%, 90%)',
+            sx={(theme) => ({
+              color: theme.palette.mode === 'dark' ? 'hsl(60, 100%, 90%)' : 'text.primary',
               fontFamily: 'BumbleCharm,Inter,sans-serif',
               fontSize: '0.95rem',
               lineHeight: 1.7,
               fontStyle: 'italic'
-            }}
+            })}
           >
             {selectedFeature.title === 'Student' && (
               <>Create your account and unlock a complete learning ecosystem built to help you excel in mathematics. Gain access to a vast library of study materials, interactive features, practice content, assessments, and our AI powered learning tools that enhance understanding. Book pre-scheduled group classes, arrange individual tutoring sessions, or request instant help through Uber Tutoring whenever you're stuck. Everything you need to learn, practice, and improve is available within a single platform.</>
@@ -221,7 +221,12 @@ export default function Features() {
         </Typography>
         <Typography
           variant="body1"
-          sx={{ color: 'text.secondary', mb: { xs: 2, sm: 4 }, fontFamily: 'RockThorn, Inter, sans-serif', fontSize: '1.1rem' }}
+          sx={(theme) => ({
+            color: theme.palette.mode === 'dark' ? 'text.secondary' : 'text.primary',
+            mb: { xs: 2, sm: 4 },
+            fontFamily: 'RockThorn, Inter, sans-serif',
+            fontSize: '1.1rem'
+          })}
         >
           Mathmentor is built to support every part of the learning journey from teaching, to studying, to guiding. Whether you're here to share your expertise, master new concepts, or support a child's progress, each role is designed with dedicated tools, features, and controls tailored to your needs.
         </Typography>
@@ -314,11 +319,11 @@ export default function Features() {
           >
             <Typography
               variant="body1"
-              sx={{
-                color: 'hsl(60, 100%, 90%)',
+              sx={(theme) => ({
+                color: theme.palette.mode === 'dark' ? 'hsl(60, 100%, 90%)' : 'hsl(30, 8%, 15%)',
                 fontFamily: 'RockThorn, Inter, sans-serif',
                 fontSize: '1.1rem'
-              }}
+              })}
             >
               {selectedFeature.title === 'Student' && (
                 <>Create your account and unlock a complete learning ecosystem built to help you excel in mathematics. Gain access to a vast library of study materials, interactive features, practice content, assessments, and our AI powered learning tools that enhance understanding. Book pre-scheduled group classes, arrange individual tutoring sessions, or request instant help through Uber Tutoring whenever you're stuck. Everything you need to learn, practice, and improve is available within a single platform.</>

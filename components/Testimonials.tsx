@@ -108,12 +108,13 @@ export default function Testimonials() {
           <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index} sx={{ display: 'flex' }}>
             <Card
               variant="outlined"
-              sx={{
+              sx={(theme) => ({
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 flexGrow: 1,
-              }}
+                backgroundColor: theme.palette.mode === 'dark' ? 'transparent' : 'rgba(255, 255, 255, 0.3)',
+              })}
             >
               <CardContent>
                 <Typography

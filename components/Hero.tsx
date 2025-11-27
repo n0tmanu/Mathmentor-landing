@@ -173,8 +173,11 @@ export default function Hero() {
           </Stack>
           <Typography
             variant="caption"
-            color="text.secondary"
-            sx={{ textAlign: 'center', fontFamily: 'MorrisRoman, Inter, sans-serif' }}
+            sx={(theme) => ({
+              textAlign: 'center',
+              fontFamily: 'MorrisRoman, Inter, sans-serif',
+              color: theme.palette.mode === 'dark' ? 'text.secondary' : 'text.primary'
+            })}
           >
             By clicking &quot;Start now&quot; you agree to our&nbsp;
             <Link href="#" color="primary">
@@ -222,7 +225,6 @@ export default function Hero() {
             width: { xs: 250, sm: 375, md: 450, lg: 500 },
             height: { xs: 250, sm: 375, md: 450, lg: 500 },
             objectFit: 'contain',
-            opacity: 0.8,
             zIndex: 2,
             animation: 'wizardFloat 8s cubic-bezier(0.4, 0.0, 0.2, 1) infinite',
             '@keyframes wizardFloat': {
@@ -246,7 +248,6 @@ export default function Hero() {
             width: { xs: 200, sm: 300, md: 350, lg: 400 },
             height: { xs: 200, sm: 300, md: 350, lg: 400 },
             objectFit: 'contain',
-            opacity: 0.8,
             zIndex: 2,
             animation: 'trollFloat 9s cubic-bezier(0.4, 0.0, 0.2, 1) infinite',
             '@keyframes trollFloat': {
@@ -269,7 +270,6 @@ export default function Hero() {
             width: { xs: 250, sm: 375, md: 450, lg: 500 },
             height: { xs: 250, sm: 375, md: 450, lg: 500 },
             objectFit: 'contain',
-            opacity: 0.8,
             zIndex: 2,
             animation: 'elfFloat 10s cubic-bezier(0.4, 0.0, 0.2, 1) infinite',
             '@keyframes elfFloat': {

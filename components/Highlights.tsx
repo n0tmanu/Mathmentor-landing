@@ -54,11 +54,11 @@ export default function Highlights() {
   return (
     <Box
       id="highlights"
-      sx={{
+      sx={(theme) => ({
         pt: { xs: 4, sm: 12 },
         pb: { xs: 8, sm: 16 },
-        color: 'white',
-        bgcolor: 'grey.900',
+        color: theme.palette.mode === 'dark' ? 'white' : 'text.primary',
+        bgcolor: theme.palette.mode === 'dark' ? 'grey.900' : 'background.paper',
         position: 'relative',
         '&::before': {
           content: '""',
@@ -71,11 +71,11 @@ export default function Highlights() {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          opacity: 0.1,
+          opacity: theme.palette.mode === 'dark' ? 0.1 : 0.2,
           maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%)',
           WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%)',
         },
-      }}
+      })}
     >
       <Container
         sx={{
@@ -95,7 +95,11 @@ export default function Highlights() {
           <Typography component="h2" variant="h4" gutterBottom sx={{ fontFamily: 'Runewood, Inter, sans-serif' }}>
             Highlights
           </Typography>
-          <Typography variant="body1" sx={{ color: 'grey.400', fontFamily: 'RockThorn, Inter, sans-serif', fontSize: '1.1rem' }}>
+          <Typography variant="body1" sx={(theme) => ({
+            color: theme.palette.mode === 'dark' ? 'grey.400' : 'text.secondary',
+            fontFamily: 'RockThorn, Inter, sans-serif',
+            fontSize: '1.1rem'
+          })}>
           Discover what makes our platform truly stand out. From flexible learning options to powerful features designed for students, tutors, and parents alike. Enjoy a seamless experience, smart tools, and dedicated support that helps every learner grow with confidence.
           </Typography>
         </Box>
@@ -107,20 +111,23 @@ export default function Highlights() {
                 component={Card}
                 spacing={1}
                 useFlexGap
-                sx={{
+                sx={(theme) => ({
                   color: 'inherit',
                   p: 3,
                   height: '100%',
                   borderColor: 'hsla(220, 25%, 25%, 0.3)',
-                  backgroundColor: 'grey.800',
-                }}
+                  backgroundColor: theme.palette.mode === 'dark' ? 'grey.800' : 'background.paper',
+                })}
               >
                 <Box sx={{ opacity: '50%' }}>{item.icon}</Box>
                 <div>
                   <Typography gutterBottom sx={{ fontWeight: 'medium', fontFamily: 'Runewood, Inter, sans-serif' }}>
                     {item.title}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: 'grey.400', fontFamily: 'RockThorn, Inter, sans-serif' }}>
+                  <Typography variant="body2" sx={(theme) => ({
+                    color: theme.palette.mode === 'dark' ? 'grey.400' : 'grey.500',
+                    fontFamily: 'RockThorn, Inter, sans-serif'
+                  })}>
                     {item.description}
                   </Typography>
                 </div>
