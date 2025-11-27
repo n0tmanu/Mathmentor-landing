@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="MathMentor - AI-powered math learning platform"
+    />
+    <title>MathMentor - AI-Powered Math Learning</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+    <style>
+      @font-face {
+        font-family: 'Runewood';
+        src: url('/Runewood-e9Lvp.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'RockThorn';
+        src: url('/ROCK THORN.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        --template-palette-text-primary-filter: brightness(0) saturate(100%) invert(8%) sepia(25%) saturate(1074%) hue-rotate(18deg) brightness(97%) contrast(92%);
+        --template-palette-text-secondary-filter: brightness(0) saturate(100%) invert(60%) sepia(0%) saturate(1%) hue-rotate(180deg) brightness(92%) contrast(89%);
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>
