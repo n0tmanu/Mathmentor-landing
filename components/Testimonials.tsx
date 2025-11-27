@@ -77,6 +77,7 @@ export default function Testimonials() {
           maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%)',
           WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%)',
         },
+        px: { xs: 2, sm: 0 },
         pt: { xs: 4, sm: 12 },
         pb: { xs: 8, sm: 16 },
         display: 'flex',

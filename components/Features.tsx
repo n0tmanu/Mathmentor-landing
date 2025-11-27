@@ -146,7 +146,7 @@ export function MobileLayout({
             variant="body1"
             sx={(theme) => ({
               color: theme.palette.mode === 'dark' ? 'hsl(60, 100%, 90%)' : 'text.primary',
-              fontFamily: 'BumbleCharm,Inter,sans-serif',
+              fontFamily: 'RockThorn, Inter, sans-serif',
               fontSize: '0.95rem',
               lineHeight: 1.7,
               fontStyle: 'italic'
