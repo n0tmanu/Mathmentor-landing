@@ -55,7 +55,7 @@ To run the production build on port 5005 with access restricted to localhost onl
 
 1. **Using the included serve script:**
 
-   The project includes a custom Express server (`serve.js`) for production deployment:
+   The project includes a custom Express server (`serve.js`) optimized for production deployment:
 
    ```bash
    # Build the application first
@@ -63,6 +63,14 @@ To run the production build on port 5005 with access restricted to localhost onl
 
    # Start production server on port 5005 (localhost only)
    HOST=127.0.0.1 PORT=5005 npm run serve
+   ```
+
+   **Expected Output:**
+   ```
+   🚀 MathMentor server running at http://127.0.0.1:5005
+   🔒 Access restricted to: 127.0.0.1
+   ✅ Server is secured to localhost only
+   📁 Serving static files from: /path/to/Mathmentor-landing/dist
    ```
 
 2. **Manual setup with Express:**
@@ -78,14 +86,21 @@ To run the production build on port 5005 with access restricted to localhost onl
    // Serve static files from dist directory
    app.use(express.static(path.join(__dirname, 'dist')));
 
-   // Handle client-side routing
-   app.get('*', (req, res) => {
+   // Handle client-side routing - avoid path-to-regexp issues
+   app.use((req, res, next) => {
+     // Skip API routes and static assets
+     if (req.path.startsWith('/api') ||
+         req.path.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$/)) {
+       return next();
+     }
+     // Serve React app for all other routes
      res.sendFile(path.join(__dirname, 'dist', 'index.html'));
    });
 
    // Listen only on localhost (127.0.0.1) port 5005
    app.listen(5005, '127.0.0.1', () => {
-     console.log('MathMentor server running at http://127.0.0.1:5005');
+     console.log('🚀 MathMentor server running at http://127.0.0.1:5005');
+     console.log('✅ Server is secured to localhost only');
    });
    ```
 
@@ -100,6 +115,7 @@ To run the production build on port 5005 with access restricted to localhost onl
 - The server is configured to only accept connections from `127.0.0.1` (localhost)
 - Port 5005 is used for internal/production access
 - No external access is allowed with this configuration
+- Compatible with various Express/path-to-regexp versions
 
 ### Environment Variables
 
